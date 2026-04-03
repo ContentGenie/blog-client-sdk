@@ -123,6 +123,19 @@ export class ContentGenieClient {
   }
 
   /**
+   * Fetch related articles for a given article slug.
+   */
+  async getRelatedArticles(
+    slug: string,
+    limit: number = 3
+  ): Promise<ArticleListItem[]> {
+    return this.request<ArticleListItem[]>(
+      `/articles/${encodeURIComponent(slug)}/related`,
+      { limit: String(limit) }
+    );
+  }
+
+  /**
    * Fetch distinct categories from published articles.
    */
   async getCategories(): Promise<Category[]> {
