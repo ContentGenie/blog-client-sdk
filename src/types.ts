@@ -19,6 +19,7 @@ export interface ArticleListItem {
   excerpt: string | null;
   primaryKeyword: string;
   category: string | null;
+  categorySlug: string | null;
   tags: string[];
   seoTitle: string | null;
   seoDescription: string | null;
